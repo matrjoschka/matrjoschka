@@ -4,20 +4,21 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>matrjoschka</title>
-    <script src="script.js"></script>
+    <link rel="stylesheet" href="style.css" />
+    <script src="vue.js"></script>
 </head>
 <body>
-    <h1> m a t r o j s c h k a </h1>
-    <p>bla bli blu bla</p>
+    <h1> m a t r j o s c h k a </h1>
     
-    <div>
-        this is the question
+    
+    <div id="app">
+        <riddle
+        v-bind:msg="message[counter].msg"
+        ></riddle>
+        <input v-model="answer" :placeholder="answer">
+        <button v-on:click="submit">submit</button>
     </div>
-    <form name="form" onsubmit="return enigma()" method="POST">
-        <div>
-            <input type="text" name="useranswer" placeholder="type in answer">
-            <input type="submit" value="send" name="Submit">
-        </div> 
-    </form>
+
+    <script src="script.js"></script>
 </body>
 </html>
